@@ -1,10 +1,8 @@
-
 # Python program to demonstrate delete operation 
 # in binary search tree 
 
 # A Binary Tree Node 
 class Node: 
-
 	# Constructor to create a new node 
 	def __init__(self, key): 
 		self.key = key 
@@ -20,9 +18,17 @@ def inorder(root):
 def preorder(root): 
 	if root is not None: 
 		print(root.key)
-		inorder(root.left) 
-		inorder(root.right)
- 
+		preorder(root.left) 
+		preorder(root.right)
+
+def write(root, depth=0, indent=4):
+    if root==None:
+        return
+    print("{}{}".format(" "*(indent*depth), root.key))
+    if root!=None:
+        write(root.left, depth=depth+1, indent=indent)
+        write(root.right, depth=depth, indent=indent)
+
 def insert(node, key): 
  
 	if node is None: 
@@ -88,5 +94,5 @@ for line in file:
 print("Inorder Traversal") 
 inorder(root)
 print("Preorder Traversal")
-preorder(root)
+write(root)
 
