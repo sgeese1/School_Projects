@@ -68,7 +68,13 @@ public class BuildHeap {
             arr[i] = (int) (Math.random() * 50000); 
         }
 
+        int[] arr2 = new int[5000];
+        for (int i = 0; i < arr2.length; i++) {
+            arr2[i] = (int) (Math.random() * 50000); 
+        }
+
         int n = arr.length; 
+        int n2 = arr2.length;
   
         long startTime1 = System.nanoTime();
         buildInsertHeap(arr, n);
@@ -79,11 +85,11 @@ public class BuildHeap {
         printHeap(arr, n);
 
         long startTime2 = System.nanoTime();
-        buildLinearHeap(arr, n);
+        buildLinearHeap(arr2, n2);
         long endTime2 = System.nanoTime();
         System.out.println("Execution time for linear heap insertion is " + (endTime2 - startTime2) + " nanoseconds");
         System.out.println("Number of swaps: " + getSwaps());
         clearSwaps();
-        printHeap(arr, n); 
+        printHeap(arr2, n2); 
     } 
 } 
