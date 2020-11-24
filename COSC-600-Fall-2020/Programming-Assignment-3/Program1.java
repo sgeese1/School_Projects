@@ -25,7 +25,7 @@ public class BuildHeap {
    
             heapify(arr, n, largest); 
         } 
-    } 
+    }
    
     static void buildLinearHeap(int arr[], int n) 
     { 
@@ -46,10 +46,6 @@ public class BuildHeap {
     static int getSwaps(){
         return numSwaps;
     }
-
-    static void clearSwaps(){
-        numSwaps = 0;
-    }
    
     static void printHeap(int arr[], int n) 
     { 
@@ -59,7 +55,13 @@ public class BuildHeap {
             System.out.print(arr[i] + " "); 
   
         System.out.println(); 
-    } 
+    }
+
+    static void resetHeap(int arr[], int n){
+        for (int i = n; i >= 0; i--){
+            heapify(arr, n, i);
+        }
+    }
    
     public static void main(String args[]) 
     { 
@@ -68,28 +70,20 @@ public class BuildHeap {
             arr[i] = (int) (Math.random() * 50000); 
         }
 
-        int[] arr2 = new int[5000];
-        for (int i = 0; i < arr2.length; i++) {
-            arr2[i] = (int) (Math.random() * 50000); 
-        }
-
         int n = arr.length; 
-        int n2 = arr2.length;
   
         long startTime1 = System.nanoTime();
         buildInsertHeap(arr, n);
         long endTime1 = System.nanoTime();
         System.out.println("Execution time for heap insert is " + (endTime1 - startTime1) + " nanoseconds");
         System.out.println("Number of swaps: " + getSwaps());
-        clearSwaps();
         printHeap(arr, n);
 
         long startTime2 = System.nanoTime();
-        buildLinearHeap(arr2, n2);
+        buildLinearHeap(arr, n);
         long endTime2 = System.nanoTime();
         System.out.println("Execution time for linear heap insertion is " + (endTime2 - startTime2) + " nanoseconds");
         System.out.println("Number of swaps: " + getSwaps());
-        clearSwaps();
-        printHeap(arr2, n2); 
+        printHeap(arr, n); 
     } 
 } 
