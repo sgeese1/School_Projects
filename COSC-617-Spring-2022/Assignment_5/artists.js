@@ -4,7 +4,7 @@ import axios from 'axios';
 import chalk from 'chalk';
 import fs from 'fs';
 
-if(process.argv[2] == undefined){
+if(process.argv.length < 3){
     throw Error(chalk.red("Must provide the name of an artist"));
 }
 
@@ -13,19 +13,31 @@ function get_credentials(){
    return cred_obj;
 }
 
-async function get_artists() {
-    const artist_url = "http://www.popvortex.com/music/charts/top-rap-songs.php";
-    var each_artist = process.argv.slice(2);
-    console.log(each_artist);
+function artist_iterator() {
+    var artists = process.argv.slice(2);
     var song_list = [];
-    each_artist.forEach(async function(element) {
-    var artist_name = await element;
-    console.log(artist_name);
+    artists.forEach((element) => {
+        song_list.concat(get_artists(element));
+    })
+
+    return song_list;
+}
+
+function artist_name_list() {
+    var artists = process.argv.slice(2);
+    var artist_list = artists.join(',');
+    return artist_list;
+}
+
+async function get_artists(artist_name) {
+    const artist_url = "http://www.popvortex.com/music/charts/top-rap-songs.php";
+    var song_list = [];
     const song = {artist:"", title:""};
 
     const {data} = await axios.get(artist_url)
 
     var $ = cheerio.load(data);
+
     $('p.title-artist').each(function(i, element) {
         if($(this).text().includes(artist_name)){
             song.artist = $(element).children("em").text();
@@ -34,15 +46,31 @@ async function get_artists() {
         }
     });
 
-});
-    console.log(song_list);
+    let message = await list_builder(song_list);
+    send_email(song_list, message);
+    console.log(message);
+    
     return song_list;
+    
+
 }
 
-async function send_email() {
-    var creds = get_credentials();
-    var songs = await get_artists();
+function list_builder(song_list) {
+    var message = `<ul style="list-style: none;">`;
+    console.log(song_list);
+    var flat_song_list = song_list.flat();
+    flat_song_list.forEach((element) => {
+            message += 
+            `<li><strong>${element.artist}:</strong> <em>${element.title}</em></li>`
+        });
 
+    message += `</ul>`;
+    return message;
+}
+
+function send_email(songs, message) {
+    var creds = get_credentials();
+    console.log(songs);
     if(songs.length == 0){
         throw Error(chalk.red("No songs found for artist"));
     }
@@ -58,8 +86,8 @@ async function send_email() {
     let mailOptions = {
         from: creds.from,
         to: creds.to,
-        subject: "Your artist(s) are: " + process.argv[2],
-        text: JSON.stringify(Object.values(songs),null,'\t')
+        subject: "Your artist(s) are: " + artist_name_list(),
+        html: message
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
@@ -70,10 +98,8 @@ async function send_email() {
     })
 }
 
-send_email();
+async function run_program() {
+    await artist_iterator();
+}
 
-//get_artists();
-
-
-
-
+run_program();
