@@ -1,7 +1,6 @@
 {
   "name": "assignment_5",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,6 +13,10 @@
     "chalk": "^5.0.1",
     "cheerio": "^1.0.0-rc.10",
     "fs": "0.0.1-security",
+    "node-fetch": "^2.6.7",
     "nodemailer": "^6.7.3"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.12"
   }
 }

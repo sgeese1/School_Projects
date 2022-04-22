@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+
+var state = {
+  articles: []
+};
+
+axios.get(`https://www.jalirani.com/files/barstool.json`)
+      .then(res => {
+        const articles = res.data;
+        this.setState({ articles });
+      })
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ul>
+      {
+          this.state.articles
+            .map(article =>
+              <li key={article.id}>
+                <div>
+                  <img src={article.location + article.thumbnail.small}>Test</img>
+                </div>
+              </li>
+            )
+        }
+      </ul>
     </div>
   );
 }

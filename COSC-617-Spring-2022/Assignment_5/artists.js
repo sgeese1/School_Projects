@@ -1,11 +1,11 @@
-import cheerio from 'cheerio';
-import nodemailer from 'nodemailer';
-import axios from 'axios';
-import chalk from 'chalk';
-import fs from 'fs';
+var cheerio = require('cheerio');
+var nodemailer = require('nodemailer');
+var axios = require('axios');
+// var chalk = require('chalk');
+var fs = require('fs');
 
 if(process.argv.length < 3){
-    throw Error(chalk.red("Must provide the name of an artist"));
+    throw Error("Must provide the name of an artist");
 }
 
 function get_credentials(){
@@ -72,7 +72,7 @@ function send_email(songs, message) {
     var creds = get_credentials();
     console.log(songs);
     if(songs.length == 0){
-        throw Error(chalk.red("No songs found for artist"));
+        throw Error("No songs found for artist");
     }
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
