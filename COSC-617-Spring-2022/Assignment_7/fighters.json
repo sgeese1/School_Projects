@@ -1,0 +1,182 @@
+[
+    {
+        "name": "Jung Chan-sung",
+        "nickname": "The Korean Zombie",
+        "wins": "17",
+        "losses": "7",
+        "height": "5'9",
+        "weight_class": "Featherweight",
+        "location": "Seoul, South Korea"
+    },
+    {
+        "name": "Jake Collier",
+        "nickname": "The Prototype",
+        "wins": "13",
+        "losses": "6",
+        "height": "6'3",
+        "weight_class": "Heavyweight",
+        "location": "Cuba, Missouri"
+    },
+    {
+        "name": "Anthony Smith",
+        "nickname": "Lionheart",
+        "wins": "36",
+        "losses": "16",
+        "height": "6'5",
+        "weight_class": "Light Heavyweight",
+        "location": "Omaha, Nebraska"
+    },
+    {
+        "name": "Robert Whittaker",
+        "nickname": "The Reaper",
+        "wins": "23",
+        "losses": "6",
+        "height": "6'0",
+        "weight_class": "Middleweight",
+        "location": "Sydney, Australia"
+    },
+    {
+        "name": "Phil Hawes",
+        "nickname": "Megatron",
+        "wins": "11",
+        "losses": "3",
+        "height": "5'11",
+        "weight_class": "Middleweight",
+        "location": "Little Ferry, New Jersey"
+    },
+    {
+        "name": "Li Jingliang",
+        "nickname": "The Leech",
+        "wins": "18",
+        "losses": "7",
+        "height": "6'0",
+        "weight_class": "Welterweight",
+        "location": "Beijing, China"
+    },
+    {
+        "name": "Cody Stamann",
+        "nickname": "The Spartan",
+        "wins": "19",
+        "losses": "5",
+        "height": "5'6",
+        "weight_class": "Bantamweight",
+        "location": "Sparta, Michigan"
+    },
+    {
+        "name": "Chase Hooper",
+        "nickname": "The Teenage Dream",
+        "wins": "10",
+        "losses": "2",
+        "height": "6'1",
+        "weight_class": "Featherweight",
+        "location": "Enumclaw, Washington"
+    },
+    {
+        "name": "Jonathan Martinez",
+        "nickname": "The Dragon",
+        "wins": "14",
+        "losses": "4",
+        "height": "5'7",
+        "weight_class": "Bantamweight",
+        "location": "Plainview, Texas"
+    },
+    {
+        "name": "Mateusz Gamrot",
+        "nickname": "Gamer",
+        "wins": "20",
+        "losses": "1",
+        "height": "5'10",
+        "weight_class": "Lightweight",
+        "location": "Poznan, Poland"
+    },
+    {
+        "name": "Jesse Ronson",
+        "nickname": "The Body Snatcher",
+        "wins": "22",
+        "losses": "11",
+        "height": "5'9",
+        "weight_class": "Lightweight",
+        "location": "Ontario, Canada"
+    },
+    {
+        "name": "Song Kenan",
+        "nickname": "The Assassain",
+        "wins": "18",
+        "losses": "6",
+        "height": "6'0",
+        "weight_class": "Welterweight",
+        "location": "Tangshan, China"
+    },
+    {
+        "name": "Niko Price",
+        "nickname": "The Hybrid",
+        "wins": "15",
+        "losses": "5",
+        "height": "6'0",
+        "weight_class": "Welterweight",
+        "location": "Cape Coral, Florida"
+    },
+    {
+        "name": "Alex Pereira",
+        "nickname": "Poatan",
+        "wins": "5",
+        "losses": "1",
+        "height": "6'4",
+        "weight_class": "Middleweight",
+        "location": "Bethel, Conneticut"
+    },
+    {
+        "name": "Jordan Wright",
+        "nickname": "The Beverly Hills Ninja",
+        "wins": "12",
+        "losses": "3",
+        "height": "6'2",
+        "weight_class": "Middleweight",
+        "location": "Los Angeles, California"
+    },
+    {
+        "name": "Julian Marquez",
+        "nickname": "The Cuban Missle Crisis",
+        "wins": "9",
+        "losses": "2",
+        "height": "6'2",
+        "weight_class": "Middleweight",
+        "location": "Kansas City, Missouri"
+    },
+    {
+        "name": "Sean Strickland",
+        "nickname": "Tarzan",
+        "wins": "25",
+        "losses": "3",
+        "height": "6'1",
+        "weight_class": "Middleweight",
+        "location": "Commerce, California"
+    },
+    {
+        "name": "Paul Craig",
+        "nickname": "BearJaw",
+        "wins": "16",
+        "losses": "4",
+        "height": "6'4",
+        "weight_class": "Heavyweight",
+        "location": "Coatbridge, Scotland"
+    },
+    {
+        "name": "Khalil Rountree, Jr.",
+        "nickname": "The War Horse",
+        "wins": "10",
+        "losses": "5",
+        "height": "6'1",
+        "weight_class": "Heavyweight",
+        "location": "Phuket, Thailand"
+    },
+    {
+        "name": "Tagir Ulanbekov",
+        "nickname": "Gifted",
+        "wins": "13",
+        "losses": "2",
+        "height": "5'6",
+        "weight_class": "Flyweight",
+        "location": "Makhachkala, Russia"
+    }
+]
